@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    flex-wrap: wrap; /* Add this to allow wrapping on smaller screens */
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+}
+
+.hero-text input {
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.hero-image {
+    max-width: 50%; /* Adjust to fit better in the layout */
+}
+
+.hero-image img {
+    width: 100%; /* Make the image responsive */
+    max-width: 400px; /* Set a max-width for the image */
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 250px;
+    margin-right: 20px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #333;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.main-content h2 {
+    font-size: 24px;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 10px;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.book img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.book p {
+    margin: 10px 0 0;
+}
+
+/*loginprueba*/
+.loginprueba {
+    background-color: #ff6f61;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout {
+    background-color: #ff6f61;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.heart-icon{
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.historial{
+    font-size: 2em;
+}
+
+.help{
+    font-size: 2em;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
