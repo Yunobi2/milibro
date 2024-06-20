@@ -36,7 +36,7 @@
                             </a>
 
                             <a class="btn btn-outline-danger me-2" href="#">
-                                <i class="bi bi-heart-fill heart-icon"></i>
+                                <i class="bi bi-heart heart-icon"></i>
                             </a>
 
                             <a class="logout"
@@ -63,22 +63,21 @@
    </header>
 
    <main>
-        <section class="hero">
-           <div class="hero-banner">
-              
-               <div class="banner-text">
-                   <h1>Welcome to MILIBRO</h1>
-                   <p>Discover a world of books at your fingertips</p>
-               </div>
-           </div>
-           <div class="hero-text">
-               <p>Encuentra tu libro favorito y lealo aquí gratis</p>
-               <input type="text" id="buscarLibro" placeholder="Buscar Libro">
-           </div>
-           <div class="hero-image">
-                <img src="https://cdn.pixabay.com/photo/2024/02/28/12/39/girl-8601996_1280.png" alt="Reading Woman">
-           </div>
-       </section>
+   <section class="hero">
+        <div class="hero-banner">
+            <div class="banner-text">
+                <h1>Welcome to MILIBRO</h1>
+                <p>Discover a world of books at your fingertips</p>
+            </div>
+        </div>
+        <div class="hero-text">
+            <p>Encuentra tu libro favorito y léalo aquí gratis</p>
+            <input type="text" id="buscarLibro" placeholder="Buscar Libro">
+        </div>
+        <div class="hero-image">
+            <img src="https://cdn.pixabay.com/photo/2024/02/28/12/39/girl-8601996_1280.png" alt="Reading Woman">
+        </div>
+    </section>
 
        <section class="content">
            <div class="sidebar">
@@ -104,95 +103,95 @@
            <div class="main-content">
                <h2>Recomendado</h2>
                <div class="book-list">
-                   <div class="book">
+                   <a class="book" href="/">
                        <img src="https://via.placeholder.com/150x200" alt="All The Light We Cannot See">
                        <p>All The Light We Cannot See</p>
                        <p>By Anthony Doerr</p>
-                   </div>
+                   </a>
 
-                   <div class="book">
+                   <a class="book" href="/">
                        <img src="https://via.placeholder.com/150x200" alt="Where The Crawdads Sing">
                        <p>Where The Crawdads Sing</p>
                        <p>By Delia Owens</p>
-                   </div>
+                   </a>
 
-                   <div class="book">
+                   <a class="book" href="/">
                        <img src="https://via.placeholder.com/150x200" alt="Rich People Problems">
                        <p>Rich People Problems</p>
                        <p>By Kevin Kwan</p>
-                   </div>
+                   </a>
 
-                   <div class="book">
+                   <a class="book" href="/">
                        <img src="https://via.placeholder.com/150x200" alt="Crazy Rich Asians">
                        <p>Crazy Rich Asians</p>
                        <p>By Kevin Kwan</p>
                
-                   </div>
+                   </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Where The Crawdads Sing">
                         <p>Where The Crawdads Sing</p>
                         <p>By Delia Owens</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Rich People Problems">
                         <p>Rich People Problems</p>
                         <p>By Kevin Kwan</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Crazy Rich Asians">
                         <p>Crazy Rich Asians</p>
                         <p>By Kevin Kwan</p>
                 
-                    </div>
+                    </a>
                </div>
                <h2>Populares</h2>
                <div class="book-list">
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="All The Light We Cannot See">
                         <p>All The Light We Cannot See</p>
                         <p>By Anthony Doerr</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Where The Crawdads Sing">
                         <p>Where The Crawdads Sing</p>
                         <p>By Delia Owens</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Rich People Problems">
                         <p>Rich People Problems</p>
                         <p>By Kevin Kwan</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Crazy Rich Asians">
                         <p>Crazy Rich Asians</p>
                         <p>By Kevin Kwan</p>
                 
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Where The Crawdads Sing">
                         <p>Where The Crawdads Sing</p>
                         <p>By Delia Owens</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Rich People Problems">
                         <p>Rich People Problems</p>
                         <p>By Kevin Kwan</p>
-                    </div>
+                    </a>
 
-                    <div class="book">
+                    <a class="book" href="/">
                         <img src="https://via.placeholder.com/150x200" alt="Crazy Rich Asians">
                         <p>Crazy Rich Asians</p>
                         <p>By Kevin Kwan</p>
                 
-                    </div>
+                    </a>
            </div>
        </section>
    </main>
