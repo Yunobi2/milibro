@@ -63,9 +63,15 @@
    </header>
 
    <main>
-       <section class="hero">
+        <section class="hero">
+           <div class="hero-banner">
+              
+               <div class="banner-text">
+                   <h1>Welcome to MILIBRO</h1>
+                   <p>Discover a world of books at your fingertips</p>
+               </div>
+           </div>
            <div class="hero-text">
-               {{-- <h1>READ AND ADD YOUR INSIGHT</h1> --}}
                <p>Encuentra tu libro favorito y lealo aquí gratis</p>
                <input type="text" id="buscarLibro" placeholder="Buscar Libro">
            </div>
