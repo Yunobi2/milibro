@@ -33,17 +33,6 @@ nav a {
     color: #333;
 }
 
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #fff;
-    flex-wrap: wrap; 
-    justify-content: space-evenly;
-}
-
 .hero-text {
     max-width: 50%;
 }
@@ -68,7 +57,8 @@ nav a {
 }
 
 .hero-image {
-    max-width: 50%; /* Adjust to fit better in the layout */
+    max-width: 50%; 
+    /* Adjust to fit better in the layout */
 }
 
 .hero-image img {
@@ -100,9 +90,14 @@ nav a {
 }
 
 .sidebar ul li {
-    padding: 10px 0;
+    padding: 10px 10px;
     cursor: pointer;
     color: #333;
+}
+
+.sidebar ul li:hover{
+    background-color: #ffba61;
+    color: #fff;
 }
 
 .main-content {
@@ -137,6 +132,18 @@ nav a {
 
 .book p {
     margin: 10px 0 0;
+}
+
+.book-list a{
+    text-decoration: none;
+    color: #333;
+}
+
+.book-list a:hover{
+    color: #ffba61;
+    scale: 1.1;
+    /* transicion de inicio y fin */
+    transition: all 0.3s ease;
 }
 
 /*loginprueba*/
@@ -189,14 +196,15 @@ height: 100%;
 }
 .hero {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 20px;
     background-color: #ffba61;
     color: #fff;
     border-radius: 10px;
     margin-bottom: 20px; /* Adjust as needed */
+    gap: 50px;
 }
 
 .hero-banner img {
