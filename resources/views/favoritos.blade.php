@@ -11,12 +11,10 @@
    />
 
    <header>
-       <div class="container">
-           <div class="logo">MILIBRO</div>
+           
 
                 @if (Route::has('login'))
                     @include('layouts.navbar')
                 @endif
-       </div>
-   </header>
 
+   </header>
