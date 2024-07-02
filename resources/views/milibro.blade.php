@@ -73,28 +73,27 @@
                    </a>
 
                    <a class="book" href="/">
-                       <img src="https://via.placeholder.com/150x200" alt="Where The Crawdads Sing">
-                       <p>Where The Crawdads Sing</p>
-                       <p>By Delia Owens</p>
+                       <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/5f/83/5f8394ec960af22738f91dff6aa88826.jpg" alt="Where The Crawdads Sing">
+                       <p>La Ciuidad de las Bestias</p>
+                       <p>Isabel Allende</p>
                    </a>
 
                    <a class="book" href="/">
-                       <img src="https://via.placeholder.com/150x200" alt="Rich People Problems">
-                       <p>Rich People Problems</p>
-                       <p>By Kevin Kwan</p>
+                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj3spIjvh_3NM7aLxNIqURK9qQbM9XcR4Sig&s" alt="Rich People Problems">
+                       <p>El Secreto de las 7 Semillas</p>
+                       <p>David Fischman</p>
                    </a>
 
                    <a class="book" href="/">
-                       <img src="https://via.placeholder.com/150x200" alt="Crazy Rich Asians">
-                       <p>Crazy Rich Asians</p>
-                       <p>By Kevin Kwan</p>
-               
+                       <img src="https://images.librotea.com/uploads/media/2024/06/12/criaturas-imposibles.jpeg" alt="Crazy Rich Asians">
+                       <p>Criaturas Imposibles</p>
+                       <p>Katherine Rundell</p>
                    </a>
 
                     <a class="book" href="/">
-                        <img src="https://via.placeholder.com/150x200" alt="Where The Crawdads Sing">
-                        <p>Where The Crawdads Sing</p>
-                        <p>By Delia Owens</p>
+                        <img src="https://m.media-amazon.com/images/I/61bsmg08WbL._AC_UF1000,1000_QL80_.jpg" alt="Where The Crawdads Sing">
+                        <p>Indigno de ser Humano</p>
+                        <p>Osamu Dazai</p>
                     </a>
 
                     <a class="book" href="/">
@@ -162,4 +161,3 @@
 </body>
 
 </html>
-
