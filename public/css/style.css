@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 .container {
@@ -15,6 +16,10 @@ body {
 header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .logo {
@@ -26,16 +31,6 @@ nav a {
     margin: 0 10px;
     text-decoration: none;
     color: #333;
-}
-
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #fff;
-    flex-wrap: wrap; /* Add this to allow wrapping on smaller screens */
 }
 
 .hero-text {
@@ -62,7 +57,8 @@ nav a {
 }
 
 .hero-image {
-    max-width: 50%; /* Adjust to fit better in the layout */
+    max-width: 50%; 
+    /* Adjust to fit better in the layout */
 }
 
 .hero-image img {
@@ -84,8 +80,8 @@ nav a {
 
 .sidebar h2 {
     font-size: 20px;
-    border-bottom: 2px solid #ff6f61;
-    padding-bottom: 10px;
+    border-bottom: 2px solid #ffba61;
+    padding-bottom: 20px;
 }
 
 .sidebar ul {
@@ -94,9 +90,14 @@ nav a {
 }
 
 .sidebar ul li {
-    padding: 10px 0;
+    padding: 10px 10px;
     cursor: pointer;
     color: #333;
+}
+
+.sidebar ul li:hover{
+    background-color: #ffba61;
+    color: #fff;
 }
 
 .main-content {
@@ -105,7 +106,7 @@ nav a {
 
 .main-content h2 {
     font-size: 24px;
-    border-bottom: 2px solid #ff6f61;
+    border-bottom: 2px solid #ffba61;
     padding-bottom: 10px;
 }
 
@@ -133,9 +134,21 @@ nav a {
     margin: 10px 0 0;
 }
 
+.book-list a{
+    text-decoration: none;
+    color: #333;
+}
+
+.book-list a:hover{
+    color: #ffba61;
+    scale: 1.1;
+    /* transicion de inicio y fin */
+    transition: all 0.3s ease;
+}
+
 /*loginprueba*/
 .loginprueba {
-    background-color: #ff6f61;
+    background-color: #ffba61;
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -144,12 +157,13 @@ nav a {
 }
 
 .logout {
-    background-color: #ff6f61;
+    background-color: #ffba61;
     border: none;
     padding: 10px 20px;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
+
 }
 
 .heart-icon{
@@ -179,4 +193,36 @@ height: calc(100% - 73px);
 .h-custom {
 height: 100%;
 }
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffba61;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Adjust as needed */
+    gap: 50px;
+}
+
+.hero-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.banner-text {
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.banner-text p {
+    font-size: 18px;
 }
