@@ -2,7 +2,9 @@
         <h1>MILIBRO</h1>
         <section class="nav-buttons">
             @auth
-            <a href="/">Home</a>
+            <a class="btn btn-outline-danger me-2" href="#">
+                <i class="bi bi-house house-icon"></i>
+            </a> 
             <a class="btn btn-outline-danger me-2" href="#">
                 <i class="bi bi-question-circle help"></i>
             </a>

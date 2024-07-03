@@ -13,8 +13,8 @@
    <header>
            
 
-                @if (Route::has('login'))
-                    @include('layouts.navbar')
-                @endif
+        @if (Route::has('login'))
+        @include('layouts.navbar')
+        @endif
 
    </header>
