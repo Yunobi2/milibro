@@ -2,14 +2,12 @@
         <h1>MILIBRO</h1>
         <section class="nav-buttons">
             @auth
-            <a class="btn btn-outline-danger me-2" href="#">
-                <i class="bi bi-house house-icon"></i>
-            </a> 
-            <a class="btn btn-outline-danger me-2" href="#">
-                <i class="bi bi-question-circle help"></i>
+ 
+            <a class="btn btn-outline-danger me-2" href="{{url('/home')}}">
+                <i class="bi bi-house home"></i>
             </a>
             
-            <a class="btn btn-outline-danger me-2" href="#">
+            <a class="btn btn-outline-danger me-2" href="{{url('/historial')}}">
                 <i class="bi bi-clock-history historial"></i>
             </a>
             
@@ -32,7 +30,7 @@
         href="{{ route('login') }}"
         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
         >
-        Login
+        Iniciar Sesión
         </a>                        
         @endauth
     </section>

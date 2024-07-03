@@ -81,12 +81,6 @@
                     <div class="text-center text-lg-start mt-4 pt-2">
                       <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
                         style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
-                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                          <p class="lead fw-normal mb-0 me-3">Iniciar sesion con</p>
-                          <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
-                            <i class="bi bi-google"></i>
-                          </button>
-                        </div>
                       <p class="small fw-bold mt-2 pt-1 mb-0">No tienes una? <a href="{{route('register')}}"
                           class="link-danger">Registrarse</a></p>
                     </div>
