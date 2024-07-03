@@ -2,11 +2,11 @@
         <h1>MILIBRO</h1>
         <section class="nav-buttons">
             @auth
-            <a class="btn btn-outline-danger me-2" href="#">
+            <a class="btn btn-outline-danger me-2" href="{{url('/home')}}">
                 <i class="bi bi-house home"></i>
             </a>
             
-            <a class="btn btn-outline-danger me-2" href="#">
+            <a class="btn btn-outline-danger me-2" href="{{url('/historial')}}">
                 <i class="bi bi-clock-history historial"></i>
             </a>
             
