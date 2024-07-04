@@ -263,3 +263,9 @@ height: 100%;
     font-size: 1.5em;
 }
 
+/* boton buscar */
+.lupa{
+    position: relative;
+    left: -30px; /* Ajusta para mover el icono dentro del input */
+    z-index: 1; /* Asegura que el icono esté sobre el input */
+}
