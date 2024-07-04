@@ -1,17 +1,17 @@
 <nav>
-        <h1>MILIBRO</h1>
+        <img src="/milibro.png" alt="logo milibro" class=" w-24">
         <section class="nav-buttons">
             @auth
-            <a class="btn btn-outline-danger me-2" href="{{url('/home')}}">
-                <i class="bi bi-house home"></i>
+            <a class="me-2" href="{{url('/home')}}">
+                <img src="{{asset('icons/house.svg')}}" class="" alt="icono home">
             </a>
             
-            <a class="btn btn-outline-danger me-2" href="{{url('/historial')}}">
-                <i class="bi bi-clock-history historial"></i>
+            <a class="me-2" href="{{url('/historial')}}">
+                <img src="{{asset('icons/history.svg')}}" alt="icono historial">
             </a>
             
-            <a class="btn btn-outline-danger me-2" href="{{url('/favoritos')}}">
-                <i class="bi bi-heart heart-icon"></i>
+            <a class="me-2" href="{{url('/favoritos')}}">
+                <img src="{{asset('icons/heart.svg')}}" alt="icono favoritos">
             </a>
             
             <a class="logout"
@@ -34,17 +34,3 @@
         @endauth
     </section>
 </nav>
-
-<style>
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-    
-    }
-    .nav-buttons {
-        display: flex;
-        align-items: center;
-    }
-</style>
