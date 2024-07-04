@@ -16,8 +16,9 @@
         </div>
         <div class="main-content">
             <h2>Favoritos</h2>
-            <div class="w-full border rounded-xl p-4">
-                @foreach($libros as $libro)
+            <div class="p-5">
+                <div class="w-full border rounded-xl p-4 cursor-pointer hover:scale-105 duration-500">
+                    @foreach($libros as $libro)
                     <a class="flex no-underline text-black w-full" href="/home/{{ $libro->id }}">
                         <img src="{{ $libro->portada }}" alt="{{ $libro->titulo }}" class=" h-72 border">
                         <div class="p-4">
@@ -31,7 +32,8 @@
                             <p class=" line-clamp-5 text-justify">{{ $libro->resumen }}</p>
                         </div>
                     </a>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>

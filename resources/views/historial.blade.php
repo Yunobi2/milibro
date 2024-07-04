@@ -27,7 +27,7 @@
                                     <p class=" text-2xl font-bold">{{$libro->titulo}}</p>
                                     <p class=" text-gray-800 ">{{ $libro->autor }}</p>
                                 </div>
-                                <img src="{{ asset('/icons/heart-fill.svg')}}" class="w-7 items-start" alt="icono de corazon">
+                                <!-- <img src="{{ asset('/icons/heart-fill.svg')}}" class="w-7 items-start" alt="icono de corazon"> -->
                             </div>
                             <p class=" line-clamp-5 text-justify">{{ $libro->resumen }}</p>
                         </div>
