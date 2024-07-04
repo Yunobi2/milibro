@@ -2,13 +2,11 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('milibro');
-});
+Route::get('/', 'App\Http\Controllers\LibroController@index');
 
 Auth::routes();
 
-Route::get('/', 'App\Http\Controllers\LibroController@index')->name('home.index');
+Route::get('/home', 'App\Http\Controllers\LibroController@index')->name('home.index');
 Route::view('favoritos','favoritos')->name('favoritos');
 Route::view('historial', 'historial')->name('historial');
-Route::get('/{id}', 'App\Http\Controllers\LibroController@show')->name('home.show');
+Route::get('/home/{id}', 'App\Http\Controllers\LibroController@show')->name('home.show');
