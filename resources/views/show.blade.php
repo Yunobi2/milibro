@@ -5,28 +5,28 @@
   <h2 class="text-2xl">Libro</h2>
   <hr>
   <section class="flex m-4">
-    <img src="https://marketplace.canva.com/EAFGf9027eM/1/0/1003w/canva-portada-libro-infantil-bosque-ilustrado-azul-P3McSjgOm1I.jpg" width="360" height="600" alt="Where The Crawdads Sing">
+    <img src="{{ $libro->portada}}">
 
     <div class="w-full p-5">
       <div class="flex justify-between">
         <div class="">
-          <h3>Autor</h3>
-          <h3>Titulo</h3>
+          <h3>{{ $libro->autor }}</h3>
+          <h3>{{ $libro->titulo }}</h3>
         </div>
-        <div class="flex">
-          <img class="w-7" src="{{asset('icons/heart.svg')}}" alt="">
-          <img class="w-7" src="{{asset('icons/compartir.svg')}}" alt="">
+        <div class="flex gap-4">
+          <img class="p-2 rounded hover:bg-yellow-300"" src="{{asset('icons/heart.svg')}}" alt="">
+          <img class="p-2 rounded hover:bg-yellow-300"" src="{{asset('icons/compartir.svg')}}" alt="">
         </div>
       </div>
       <div>
-        <p>fecha - n° paginas</p>
-        <p>categorias</p>
-        <p>descripcion</p>
-        <button>Leer</button>
+        <p>{{ $libro->ano }} - n° paginas</p>
+        <p>{{ $libro->categoria }}</p>
+        <p>{{ $libro->resumen }}</p>
+        <button class="border bg-yellow-400 py-1 px-3 rounded-md">Leer</button>
       </div>
     </div>
   </section>
-  <h2 class="text-2xl text-center my-2">Opiniones sobre la ciudad de las bestias</h2>
+  <h2 class="text-2xl text-center my-2">Opiniones sobre {{ $libro->titulo }}</h2>
   <hr>
   <section class="m-4">
     <div class="flex">
