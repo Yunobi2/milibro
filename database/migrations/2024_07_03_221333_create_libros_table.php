@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('editorial')->nullable();
             $table->string('categoria');
             $table->text('resumen')->nullable(); 
+            $table->string('portada');
             $table->timestamps();
         });
     }

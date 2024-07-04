@@ -43,9 +43,9 @@
             <h2>Recomendado</h2>
             <div class="book-list">
                 <a class="book" href="/">
-                <img src="https://marketplace.canva.com/EAFGf9027eM/1/0/1003w/canva-portada-libro-infantil-bosque-ilustrado-azul-P3McSjgOm1I.jpg" width="120" height="200" alt="Where The Crawdads Sing">
-                    <p>El zorro en el bosque </p>
-                    <p>Salma Dubois</p>
+                <img src="https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9789500767767_ubzsvunvtrsxlqxj.jpg" width="120" height="200" alt="Where The Crawdads Sing">
+                    <p>La casa de los espíritus</p>
+                    <p>Isabell Allende</p>
                 </a>
 
                 <a class="book" href="/">
