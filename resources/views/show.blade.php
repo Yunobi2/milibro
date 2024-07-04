@@ -5,7 +5,7 @@
   <h2 class="text-2xl">Libro</h2>
   <hr>
   <section class="flex m-4">
-    <img src="{{ $libro->portada}}">
+    <img src="{{ $libro->portada}}" class="w-1/3">
 
     <div class="w-full p-5">
       <div class="flex justify-between">
@@ -14,8 +14,8 @@
           <h3>{{ $libro->titulo }}</h3>
         </div>
         <div class="flex gap-4">
-          <img class="p-2 rounded hover:bg-yellow-300"" src="{{asset('icons/heart.svg')}}" alt="">
-          <img class="p-2 rounded hover:bg-yellow-300"" src="{{asset('icons/compartir.svg')}}" alt="">
+          <img class="px-1 w-8 rounded hover:bg-yellow-300" src="{{asset('icons/heart.svg')}}" alt="">
+          <img class="px-1 w-8 rounded hover:bg-yellow-300" src="{{asset('icons/compartir.svg')}}" alt="">
         </div>
       </div>
       <div>

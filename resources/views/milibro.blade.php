@@ -43,8 +43,8 @@
             <h2>Recomendado</h2>
             <div class="book-list">
                 @foreach($libros as $libro)
-                    <a class="book" href="/{{ $libro->id }}">
-                        <img src="{{ $libro->portada }}" width="120" height="200" alt="{{ $libro->titulo }}">
+                    <a class="book" href="/home/{{ $libro->id }}">
+                        <img src="{{ $libro->portada }}" alt="{{ $libro->titulo }}">
                         <p>{{$libro->titulo}}</p>
                         <p>{{ $libro->autor }}</p>
                     </a>

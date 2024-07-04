@@ -21,7 +21,7 @@
         <img src="/milibro.png" alt="logo milibro" class=" w-24">
         <section class="nav-buttons">
             @auth
-            <a class="me-2" href="{{url('/home')}}">
+            <a class="me-2" href="{{url('/')}}">
                 <img src="{{asset('icons/house.svg')}}" class="" alt="icono home">
             </a>
             
