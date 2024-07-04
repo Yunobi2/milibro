@@ -19,7 +19,7 @@
         </div>
       </div>
       <div>
-        <p>{{ $libro->ano }} - n° paginas</p>
+        <p>{{ $libro->ano }} - {{ $libro->pagina}}</p>
         <p>{{ $libro->categoria }}</p>
         <p>{{ $libro->resumen }}</p>
         <button class="border bg-yellow-400 py-1 px-3 rounded-md">Leer</button>

@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', 'App\Http\Controllers\LibroController@index')->name('home.index');
 Route::view('favoritos','favoritos')->name('favoritos');
 Route::view('historial', 'historial')->name('historial');
 Route::get('/home/{id}', 'App\Http\Controllers\LibroController@show')->name('home.show');
