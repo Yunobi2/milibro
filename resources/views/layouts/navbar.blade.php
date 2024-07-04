@@ -32,7 +32,14 @@
             <a class="me-2" href="{{url('/favoritos')}}">
                 <img src="{{asset('icons/heart.svg')}}" alt="icono favoritos">
             </a>
-            
+
+            <a class="logout"
+                class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                {{ __('Cerrar sesión') }}
+            </a>
+            <!--        
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-fill custom-icon"></i>
@@ -47,7 +54,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
                 </form>
-              </div>
+              </div> -->
         @else
         <a class="loginprueba"
         href="{{ route('login') }}"

@@ -16,6 +16,25 @@
         </div>
         <div class="main-content">
             <h2>Historial</h2>
+            <div class="p-5">
+                <div class="w-full border rounded-xl p-4 cursor-pointer hover:scale-105 duration-500">
+                    @foreach($libros as $libro)
+                    <a class="flex no-underline text-black w-full" href="/home/{{ $libro->id }}">
+                        <img src="{{ $libro->portada }}" alt="{{ $libro->titulo }}" class=" h-72 border">
+                        <div class="p-4">
+                            <div class="flex justify-between">
+                                <div>
+                                    <p class=" text-2xl font-bold">{{$libro->titulo}}</p>
+                                    <p class=" text-gray-800 ">{{ $libro->autor }}</p>
+                                </div>
+                                <img src="{{ asset('/icons/heart-fill.svg')}}" class="w-7 items-start" alt="icono de corazon">
+                            </div>
+                            <p class=" line-clamp-5 text-justify">{{ $libro->resumen }}</p>
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </section>
 @endsection

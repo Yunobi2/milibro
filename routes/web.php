@@ -7,6 +7,6 @@ Route::get('/', 'App\Http\Controllers\LibroController@index');
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\LibroController@index')->name('home.index');
-Route::view('favoritos','favoritos')->name('favoritos');
-Route::view('historial', 'historial')->name('historial');
+Route::get('favoritos','App\Http\Controllers\LibroController@favoritos')->name('home.favoritos');
+Route::get('historial', 'App\Http\Controllers\LibroController@historial')->name('home.historial');
 Route::get('/home/{id}', 'App\Http\Controllers\LibroController@show')->name('home.show');

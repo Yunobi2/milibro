@@ -15,7 +15,6 @@ class LibroController extends Controller
 
     public function index(){
         $libros = Libro::get();
-        
         return view('milibro', compact('libros'));
     }
 
@@ -23,5 +22,14 @@ class LibroController extends Controller
         return view('show',[
             'libro' => Libro::find($id)
         ]);
+    }
+    public function favoritos(){
+        $libros = Libro::get();
+        return view('favoritos', compact('libros'));
+    }
+
+    public function historial(){
+        $libros = Libro::get();
+        return view('historial', compact('libros'));
     }
 }
