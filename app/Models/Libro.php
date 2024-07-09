@@ -19,5 +19,10 @@ class Libro extends Model
         'resumen', 
         'portada'
     ];
+
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class);
+    }
     
 }
