@@ -95,7 +95,7 @@
   <h2 class="text-2xl text-center my-2">Opiniones sobre {{ $libro->titulo }}</h2>
   <hr>
   {{-- CALIFICACIÓN --}}
-  <section class="m-4">
+<section class="m-4">
     <h2 class="text-2xl font-semibold mb-4">Calificación</h2>
     
     @auth
@@ -104,7 +104,12 @@
                 {{ session('success') }}
             </div>
         @endif
-        <form action="{{ route('calificaciones.store', $libro) }}" method="POST" class="mb-6">
+
+        <div id="error-message" class="mb-4 p-4 bg-red-500 text-white rounded" style="display: none;">
+            Primero tienes que seleccionar las estrellas.
+        </div>
+
+        <form id="rating-form" action="{{ route('calificaciones.store', $libro) }}" method="POST" class="mb-6">
             @csrf
             <div class="flex items-center">
                 <span class="mr-2">Tu calificación:</span>
@@ -135,18 +140,44 @@
 </section>
 
 <script>
-    function highlightStars(rating) {
-        for (let i = 1; i <= 5; i++) {
-            let starLabel = document.querySelector(`label[for="star${i}"]`);
-            if (i <= rating) {
-                starLabel.classList.add('text-yellow-400');
-            } else {
-                starLabel.classList.remove('text-yellow-400');
-            }
-        }
-        document.querySelector(`input[name="calificacion"][value="${rating}"]`).checked = true;
-    }
+  console.log("Script is running"); // Para verificar que el script se está ejecutando
+
+  function highlightStars(rating) {
+      for (let i = 1; i <= 5; i++) {
+          let starLabel = document.querySelector(`label[for="star${i}"]`);
+          if (i <= rating) {
+              starLabel.classList.add('text-yellow-400');
+          } else {
+              starLabel.classList.remove('text-yellow-400');
+          }
+      }
+      document.querySelector(`input[name="calificacion"][value="${rating}"]`).checked = true;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOMContentLoaded event fired"); // Para verificar que el evento se está disparando
+      const form = document.getElementById('rating-form');
+      const errorMessage = document.getElementById('error-message');
+
+      if (form) { // Verificar que el formulario existe
+          form.addEventListener('submit', function(e) {
+              console.log("Form submit event fired"); // Para verificar que el evento submit se está disparando
+              const selectedRating = document.querySelector('input[name="calificacion"]:checked');
+              if (!selectedRating) {
+                  e.preventDefault(); // Previene el envío del formulario
+                  errorMessage.style.display = 'block'; // Muestra el mensaje de error
+                  alert("No rating selected, showing error"); // Para verificar que se detecta la falta de selección
+              } else {
+                  errorMessage.style.display = 'none'; // Oculta el mensaje de error si se seleccionó una calificación
+                  alert("Rating selected, form will submit"); // Para verificar que se detecta la selección
+              }
+          });
+      } else {
+          alert("Form not found"); // Para verificar si el formulario no se encuentra
+      }
+  });
 </script>
+
   
   <!-- Nueva sección de comentarios -->
   <section class="mt-8">
