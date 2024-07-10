@@ -59,16 +59,26 @@ class LibroController extends Controller
         return view('milibro', compact('libros'));
     }
 
-    public function show($id)
-    {
-        // return view('show', [
-        //     'libro' => Libro::find($id)
-        // ]);
+    // public function show($id)
+    // {
+    //     // return view('show', [
+    //     //     'libro' => Libro::find($id)
+    //     // ]);
 
     
-        $libro = Libro::with('comentarios.user')->findOrFail($id);
-        return view('show', compact('libro'));
+    //     $libro = Libro::with('comentarios.user')->findOrFail($id);
+    //     return view('show', compact('libro'));
     
+    // }
+
+    public function show($id)
+    {
+        $libro = Libro::with(['comentarios.user', 'calificaciones'])
+            ->withCount('calificaciones')
+            ->withAvg('calificaciones', 'calificacion')
+            ->findOrFail($id);
+
+        return view('show', compact('libro'));
     }
 
     public function favoritos()

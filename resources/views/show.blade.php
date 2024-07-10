@@ -94,29 +94,59 @@
   </section>
   <h2 class="text-2xl text-center my-2">Opiniones sobre {{ $libro->titulo }}</h2>
   <hr>
+  {{-- CALIFICACIÓN --}}
   <section class="m-4">
-    <div class="flex">
-      <p> (n comentarios)</p>
-      <p> ★★★★★ </p>
+    <h2 class="text-2xl font-semibold mb-4">Calificación</h2>
+    
+    @auth
+        @if(session('success'))
+            <div class="mb-4 p-4 bg-green-500 text-white rounded">
+                {{ session('success') }}
+            </div>
+        @endif
+        <form action="{{ route('calificaciones.store', $libro) }}" method="POST" class="mb-6">
+            @csrf
+            <div class="flex items-center">
+                <span class="mr-2">Tu calificación:</span>
+                @for ($i = 1; $i <= 5; $i++)
+                    <input type="radio" id="star{{ $i }}" name="calificacion" value="{{ $i }}" class="hidden peer" required>
+                    <label for="star{{ $i }}" class="cursor-pointer text-3xl" onclick="highlightStars({{ $i }})">★</label>
+                @endfor
+            </div>
+            <button type="submit" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Enviar calificación</button>
+        </form>
+    @else
+        <p>Inicia sesión para calificar este libro.</p>
+    @endauth
+
+    <div class="mt-4">
+        <p>Calificación promedio: {{ number_format($libro->calificacionPromedio(), 1) }} / 5</p>
+        <p>Basado en {{ $libro->calificaciones->count() }} calificaciones</p>
     </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★★★★</p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★★★</p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★★</p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★</p>
-    </div>
-    <h3 class="text-xl text-center">puntaje 5/5</h3>
-  </section>
+    @php
+        $ratingCounts = $libro->calificaciones->groupBy('calificacion')->map->count();
+    @endphp
+    @for ($i = 5; $i >= 1; $i--)
+        <div class="flex items-center">
+            <span class="mr-2">{{ $i }} ★</span>
+            <span>({{ $ratingCounts[$i] ?? 0 }} calificaciones)</span>
+        </div>
+    @endfor
+</section>
+
+<script>
+    function highlightStars(rating) {
+        for (let i = 1; i <= 5; i++) {
+            let starLabel = document.querySelector(`label[for="star${i}"]`);
+            if (i <= rating) {
+                starLabel.classList.add('text-yellow-400');
+            } else {
+                starLabel.classList.remove('text-yellow-400');
+            }
+        }
+        document.querySelector(`input[name="calificacion"][value="${rating}"]`).checked = true;
+    }
+</script>
   
   <!-- Nueva sección de comentarios -->
   <section class="mt-8">

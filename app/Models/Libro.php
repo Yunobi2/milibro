@@ -24,5 +24,15 @@ class Libro extends Model
     {
         return $this->hasMany(Comentario::class);
     }
+
+    public function calificaciones()
+    {
+        return $this->hasMany(Calificacion::class);
+    }
+
+    public function calificacionPromedio()
+    {
+        return $this->calificaciones()->avg('calificacion');
+    }
     
 }

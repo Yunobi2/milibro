@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\ComentarioController;
+use App\Http\Controllers\CalificacionController;
 
 Route::get('/', 'App\Http\Controllers\LibroController@index');
 
@@ -16,3 +17,5 @@ Route::get('/buscar', [LibroController::class, 'buscar'])->name('buscar');
 Route::post('/libros/{libro}/comentarios', [ComentarioController::class, 'store'])->name('comentarios.store');
 Route::put('/comentarios/{comentario}', [ComentarioController::class, 'update'])->name('comentarios.update');
 Route::delete('/comentarios/{comentario}', [ComentarioController::class, 'destroy'])->name('comentarios.destroy');
+
+Route::post('/libros/{libro}/calificar', [CalificacionController::class, 'store'])->name('calificaciones.store');
