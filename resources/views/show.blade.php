@@ -114,7 +114,7 @@
             <div class="flex items-center">
                 <span class="mr-2">Tu calificación:</span>
                 @for ($i = 1; $i <= 5; $i++)
-                    <input type="radio" id="star{{ $i }}" name="calificacion" value="{{ $i }}" class="hidden peer" required>
+                    <input type="radio" id="star{{ $i }}" name="calificacion" value="{{ $i }}" class="hidden peer">
                     <label for="star{{ $i }}" class="cursor-pointer text-3xl" onclick="highlightStars({{ $i }})">★</label>
                 @endfor
             </div>
@@ -138,6 +138,54 @@
         </div>
     @endfor
 </section>
+
+<!-- Nueva sección de comentarios -->
+<section class="mt-8">
+  <h2 class="text-2xl font-semibold mb-4">Comentarios</h2>
+
+  @auth
+      <form action="{{ route('comentarios.store', $libro) }}" method="POST" class="mb-6">
+          @csrf
+          <textarea name="comentario" rows="3" class="w-full p-2 border rounded" placeholder="Escribe tu comentario aquí"></textarea>
+          <button type="submit" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Enviar comentario</button>
+      </form>
+  @else
+      <p>Inicia sesión para dejar un comentario.</p>
+  @endauth
+  
+  @if($libro->comentarios)
+      @foreach($libro->comentarios as $comentario)
+          <div class="border p-4 mb-4 rounded">
+              <p class="font-bold">{{ $comentario->user->name }}</p>
+              <p class="text-sm text-gray-500">{{ $comentario->fecha_comentario }}</p>
+              <p class="mt-2">{{ $comentario->comentario }}</p>
+
+              @if(auth()->id() == $comentario->user_id)
+                  <div class="mt-2">
+                      <button onclick="toggleEditForm({{ $comentario->id }})" class="text-blue-500">Editar</button>
+                      <form action="{{ route('comentarios.destroy', $comentario) }}" method="POST" class="inline">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="text-red-500 ml-2">Eliminar</button>
+                      </form>
+                  </div>
+
+                  <form id="edit-form-{{ $comentario->id }}" action="{{ route('comentarios.update', $comentario) }}" method="POST" class="mt-2 hidden">
+                      @csrf
+                      @method('PUT')
+                      <textarea name="comentario" rows="3" class="w-full p-2 border rounded">{{ $comentario->comentario }}</textarea>
+                      <button type="submit" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Actualizar</button>
+                  </form>
+              @endif
+          </div>
+      @endforeach
+  @else
+      <p>No hay comentarios para este libro.</p>
+  @endif
+  </section>
+</section>
+
+@endsection
 
 <script>
   console.log("Script is running"); // Para verificar que el script se está ejecutando
@@ -176,60 +224,9 @@
           alert("Form not found"); // Para verificar si el formulario no se encuentra
       }
   });
-</script>
 
-  
-  <!-- Nueva sección de comentarios -->
-  <section class="mt-8">
-    <h2 class="text-2xl font-semibold mb-4">Comentarios</h2>
-
-    @auth
-        <form action="{{ route('comentarios.store', $libro) }}" method="POST" class="mb-6">
-            @csrf
-            <textarea name="comentario" rows="3" class="w-full p-2 border rounded" placeholder="Escribe tu comentario aquí"></textarea>
-            <button type="submit" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Enviar comentario</button>
-        </form>
-    @else
-        <p>Inicia sesión para dejar un comentario.</p>
-    @endauth
-    
-    @if($libro->comentarios)
-        @foreach($libro->comentarios as $comentario)
-            <div class="border p-4 mb-4 rounded">
-                <p class="font-bold">{{ $comentario->user->name }}</p>
-                <p class="text-sm text-gray-500">{{ $comentario->fecha_comentario }}</p>
-                <p class="mt-2">{{ $comentario->comentario }}</p>
-
-                @if(auth()->id() == $comentario->user_id)
-                    <div class="mt-2">
-                        <button onclick="toggleEditForm({{ $comentario->id }})" class="text-blue-500">Editar</button>
-                        <form action="{{ route('comentarios.destroy', $comentario) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-red-500 ml-2">Eliminar</button>
-                        </form>
-                    </div>
-
-                    <form id="edit-form-{{ $comentario->id }}" action="{{ route('comentarios.update', $comentario) }}" method="POST" class="mt-2 hidden">
-                        @csrf
-                        @method('PUT')
-                        <textarea name="comentario" rows="3" class="w-full p-2 border rounded">{{ $comentario->comentario }}</textarea>
-                        <button type="submit" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Actualizar</button>
-                    </form>
-                @endif
-            </div>
-        @endforeach
-    @else
-        <p>No hay comentarios para este libro.</p>
-    @endif
-  </section>
-</section>
-
-<script>
-function toggleEditForm(commentId) {
+  function toggleEditForm(commentId) {
     const form = document.getElementById(`edit-form-${commentId}`);
     form.classList.toggle('hidden');
-}
+  }
 </script>
-
-@endsection
