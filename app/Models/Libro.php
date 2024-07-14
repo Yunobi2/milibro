@@ -35,4 +35,19 @@ class Libro extends Model
         return $this->calificaciones()->avg('calificacion');
     }
     
+    //favoritos
+    public function usuarios()
+    {
+        return $this->belongsToMany(User::class, 'favoritos');
+    }
+
+    public function favoritos()
+    {
+        return $this->hasMany(Favorito::class);
+    }
+
+    public function esFavorito($userId)
+    {
+        return $this->favoritos()->where('user_id', $userId)->exists();
+    }
 }

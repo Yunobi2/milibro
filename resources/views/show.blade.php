@@ -1,67 +1,3 @@
-{{-- @extends('layouts.home')
-
-@section('content')
-<section class="p-5 mx-20">
-  <h2 class="text-2xl">Libro</h2>
-  <hr>
-  <section class="flex m-4">
-    <img src="{{ $libro->portada}}" class="w-1/3">
-
-    <div class="w-full p-5">
-      <div class="flex justify-between">
-        <div class="">
-          <h3>{{ $libro->autor }}</h3>
-          <h3>{{ $libro->titulo }}</h3>
-        </div>
-        <div class="flex gap-4">
-          <img class="px-1 w-8 rounded hover:bg-yellow-300" src="{{asset('icons/heart.svg')}}" alt="">
-          <img class="px-1 w-8 rounded hover:bg-yellow-300" src="{{asset('icons/compartir.svg')}}" alt="">
-        </div>
-      </div>
-      <div>
-        <p>{{ $libro->ano }} - {{ $libro->paginas }}</p>
-        <p>{{ $libro->categoria }}</p>
-        <p>{{ $libro->resumen }}</p>
-        <button class="border bg-yellow-400 py-1 px-3 rounded-md">Descargar</button>
-      </div>
-    </div>
-  </section>
-  <h2 class="text-2xl text-center my-2">Opiniones sobre {{ $libro->titulo }}</h2>
-  <hr>
-  <section class="m-4">
-    <div class="flex">
-      <p> (n comentarios)</p>
-      <p> ★★★★★ </p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★★★★</p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★★★</p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★★</p>
-    </div>
-    <div class="flex">
-      <p>(n comentarios)</p>
-      <p> ★</p>
-    </div>
-    <h3 class="text-xl text-center">puntaje 5/5</h3>
-  </section>
-  <h2 class=" font-semibold">n opiniones de usuarios</h2>
-  <div class="flex border p-3">
-    <div>
-      <p>user</p>
-      <p>fecha</p>
-    </div>
-    <p>comentario</p>
-  </div>
-</section>
-
-@endsection  --}}
 
 {{-- cometarios --}}
 @extends('layouts.home')
@@ -79,9 +15,13 @@
           <h3>{{ $libro->autor }}</h3>
           <h3>{{ $libro->titulo }}</h3>
         </div>
-        <div class="flex gap-4">
-          <img class="px-1 w-8 rounded hover:bg-yellow-300" src="{{asset('icons/heart.svg')}}" alt="">
-          <img class="px-1 w-8 rounded hover:bg-yellow-300" src="{{asset('icons/compartir.svg')}}" alt="">
+        <div class="flex gap-4 items-center">
+          <img id="favorito-icon" 
+          class="px-1 w-8 rounded h-12 hover:bg-yellow-300 cursor-pointer" 
+          src="{{ $libro->esFavorito(auth()->id()) ? asset('icons/heart-fill.svg') : asset('icons/heart.svg') }}" 
+          alt="Favorito" 
+          data-libro-id="{{ $libro->id }}">        
+          <img class="px-1 w-8 rounded h-12 hover:bg-yellow-300 cursor-pointer" src="{{asset('icons/compartir.svg')}}" alt="">
         </div>
       </div>
       <div>
@@ -187,6 +127,7 @@
 
 @endsection
 
+
 <script>
   console.log("Script is running"); // Para verificar que el script se está ejecutando
 
@@ -214,7 +155,6 @@
               if (!selectedRating) {
                   e.preventDefault(); // Previene el envío del formulario
                   errorMessage.style.display = 'block'; // Muestra el mensaje de error
-                  alert("No rating selected, showing error"); // Para verificar que se detecta la falta de selección
               } else {
                   errorMessage.style.display = 'none'; // Oculta el mensaje de error si se seleccionó una calificación
                   alert("Rating selected, form will submit"); // Para verificar que se detecta la selección
@@ -225,8 +165,53 @@
       }
   });
 
-  function toggleEditForm(commentId) {
-    const form = document.getElementById(`edit-form-${commentId}`);
-    form.classList.toggle('hidden');
-  }
+function toggleEditForm(commentId) {
+  const form = document.getElementById(`edit-form-${commentId}`);
+  form.classList.toggle('hidden');
+}
+    
+    // Evento DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("DOMContentLoaded event fired");
+        
+        // Código para comentarios
+        const form = document.getElementById('rating-form');
+        const errorMessage = document.getElementById('error-message');
+    
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                // ... (código existente) ...
+            });
+        } else {
+            console.log("Form not found");
+        }
+    
+        // Código para favoritos
+        const favoritoIcon = document.getElementById('favorito-icon');
+        if (favoritoIcon) {
+            favoritoIcon.addEventListener('click', function() {
+                let libroId = this.dataset.libroId;
+                fetch(`/favoritos/${libroId}`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    this.src = data.isFavorito ? '{{ asset('icons/heart-fill.svg') }}' : '{{ asset('icons/heart.svg') }}';
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        } else {
+            console.log("Favorito icon not found");
+        }
+    });
+    
+    function toggleEditForm(commentId) {
+        const form = document.getElementById(`edit-form-${commentId}`);
+        form.classList.toggle('hidden');
+    }
 </script>
