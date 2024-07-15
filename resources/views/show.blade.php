@@ -20,6 +20,7 @@
           class="px-1 w-8 rounded h-12 hover:bg-yellow-300 cursor-pointer" 
           src="{{ $libro->esFavorito(auth()->id()) ? asset('icons/heart-fill.svg') : asset('icons/heart.svg') }}" 
           alt="Favorito" 
+          title="Favorito"
           data-libro-id="{{ $libro->id }}">        
           <img class="px-1 w-8 rounded h-12 hover:bg-yellow-300 cursor-pointer" src="{{asset('icons/compartir.svg')}}" alt="">
         </div>
@@ -157,7 +158,6 @@
                   errorMessage.style.display = 'block'; // Muestra el mensaje de error
               } else {
                   errorMessage.style.display = 'none'; // Oculta el mensaje de error si se seleccionó una calificación
-                  alert("Rating selected, form will submit"); // Para verificar que se detecta la selección
               }
           });
       } else {

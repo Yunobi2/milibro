@@ -22,15 +22,15 @@
         <section class="nav-buttons">
             @auth
             <a class="me-2" href="{{url('/')}}">
-                <img src="{{asset('icons/house.svg')}}" class="" alt="icono home">
+                <img title="Home" src="{{asset('icons/house.svg')}}" class="" alt="icono home">
             </a>
             
             <a class="me-2" href="{{url('/historial')}}">
-                <img src="{{asset('icons/history.svg')}}" alt="icono historial">
+                <img title="Historial" src="{{asset('icons/history.svg')}}" alt="icono historial">
             </a>
             
             <a class="me-2" href="{{url('/favoritos')}}">
-                <img src="{{asset('icons/heart.svg')}}" alt="icono favoritos">
+                <img title="Favoritos" src="{{asset('icons/heart.svg')}}" alt="icono favoritos">
             </a>
 
             <a class="logout"
