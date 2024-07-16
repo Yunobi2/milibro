@@ -23,6 +23,7 @@ Route::post('/libros/{libro}/calificar', [CalificacionController::class, 'store'
 Route::middleware('auth')->group(function () {
     Route::get('favoritos', [FavoritoController::class, 'index'])->name('favoritos.index');
     Route::post('favoritos/{libro}', [FavoritoController::class, 'toggle'])->name('favoritos.toggle');
+    Route::get('favoritos/categoria/{categoria}', [FavoritoController::class, 'filtrarPorCategoria'])->name('favoritos.categoria');
 });
 
 Route::get('/libros', [LibroController::class, 'index'])->name('libros.index');

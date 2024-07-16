@@ -11,8 +11,19 @@ class FavoritoController extends Controller
     public function index()
     {
         $libros = auth()->user()->libros;
-        return view('favoritos', compact('libros'));
+        $categorias = auth()->user()->libros()->distinct('categoria')->pluck('categoria');
+        $categoriaActual = 'Todas'; // Agregamos esta línea
+        return view('favoritos', compact('libros', 'categorias', 'categoriaActual'));
     }
+
+    public function filtrarPorCategoria($categoria)
+    {
+        $libros = auth()->user()->libros()->where('categoria', $categoria)->get();
+        $categorias = auth()->user()->libros()->distinct('categoria')->pluck('categoria');
+        $categoriaActual = $categoria; // Agregamos esta línea
+        return view('favoritos', compact('libros', 'categorias', 'categoriaActual'));
+    }
+
 
     public function toggle(Request $request, Libro $libro)
     {
