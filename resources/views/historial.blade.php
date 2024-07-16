@@ -7,11 +7,11 @@
             <h2>Libro por Género</h2>
             <ul>
                 <li>Todos los géneros</li>
-                <li>Negocios</li>
-                <li>Ciencia</li>
+                <li>Fantasía</li>
+                <li>Autoayuda</li>
                 <li>Ficción</li>
-                <li>Filosofía</li>
-                <li>Biografía</li>
+                <li>Ficción Filosófica</li>
+                <li>Cuento</li>
             </ul>
         </div>
         <div class="main-content">

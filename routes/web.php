@@ -10,7 +10,6 @@ Route::get('/', 'App\Http\Controllers\LibroController@index');
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\LibroController@index')->name('home.index');
-// Route::get('favoritos','App\Http\Controllers\LibroController@favoritos')->name('home.favoritos');
 Route::get('historial', 'App\Http\Controllers\LibroController@historial')->name('home.historial');
 Route::get('/home/{id}', 'App\Http\Controllers\LibroController@show')->name('home.show');
 Route::get('/buscar', [LibroController::class, 'buscar'])->name('buscar');
@@ -25,3 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::get('favoritos', [FavoritoController::class, 'index'])->name('favoritos.index');
     Route::post('favoritos/{libro}', [FavoritoController::class, 'toggle'])->name('favoritos.toggle');
 });
+
+Route::get('/libros', [LibroController::class, 'index'])->name('libros.index');
+Route::get('/libros/categoria/{categoria}', [LibroController::class, 'filtrarPorCategoria'])->name('libros.categoria');

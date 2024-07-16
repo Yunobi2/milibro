@@ -97,14 +97,13 @@
 
 <section class="content">
     <div class="sidebar">
-        <h2>Libro por Género</h2>
+        <h2>Libro por Categoría</h2>
         <ul>
-            <li>Todos los géneros</li>
-            <li>Negocios</li>
-            <li>Ciencia</li>
-            <li>Ficción</li>
-            <li>Filosofía</li>
-            <li>Biografía</li>
+            <a href="{{ route('libros.index') }}" class="{{ $categoriaActual == 'Todas' ? 'active' : '' }} no-underline text-black"><li>Todas las categorías</li></a>
+            @foreach($categorias as $categoria)
+                <a href="{{ route('libros.categoria', $categoria) }}" class="no-underline text-black"><li class="{{ $categoriaActual == $categoria ? 'bg-[#ffba61] text-white' : '' }}">{{ $categoria }}</li>
+                </a>
+            @endforeach
         </ul>
 
         <h2>Recomendaciones</h2>
@@ -117,8 +116,8 @@
     </div>
 
     <div class="main-content">
-        @if(isset($libros) && $libros->isNotEmpty())
-            <h2>Recomendados</h2>
+        {{-- @if(isset($libros) && $libros->isNotEmpty()) --}}
+            <h2>{{$categoriaActual}}</h2>
             <div class="book-list">
                 @foreach($libros as $libro)
                     <a class="book" href="/home/{{ $libro->id }}">
@@ -128,18 +127,6 @@
                     </a>
                 @endforeach
             </div>
-        @else
-            <h2>Recomendado</h2>
-            <div class="book-list">
-                @foreach($libros as $libro)
-                    <a class="book" href="/home/{{ $libro->id }}">
-                        <img src="{{ $libro->portada }}" alt="{{ $libro->titulo }}">
-                        <p>{{ $libro->titulo }}</p>
-                        <p>{{ $libro->autor }}</p>
-                    </a>
-                @endforeach
-            </div>
-        @endif
     </div>
 </section>
 </main>
