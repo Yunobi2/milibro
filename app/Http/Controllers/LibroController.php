@@ -60,7 +60,10 @@ class LibroController extends Controller
             ->orWhere('categoria', 'like', "%{$query}%")
             ->get();
 
-        return view('milibro', compact('libros'));
+        $categorias = Libro::distinct('categoria')->pluck('categoria');
+        $categoriaActual = 'Resultados de búsqueda'; // O puedes usar 'Todas' si prefieres
+    
+        return view('milibro', compact('libros', 'categorias', 'categoriaActual'));
     }
 
 }
