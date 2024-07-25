@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('categoria');
             $table->text('resumen')->nullable(); 
             $table->string('portada');
+            $table->string('pdf')->nullable(); // {{ edit_1 }} Agregar campo para el PDF
             $table->timestamps();
         });
     }
