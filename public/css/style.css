@@ -177,24 +177,6 @@ nav a {
 
 }
 
-.heart-icon{
-    font-size: 2em;
-    margin-right: 10px;
-}
-
-.house-icon{
-    font-size: 2em;
-
-}
-
-.historial{
-    font-size: 2em;
-}
-
-.home{
-    font-size: 2em;
-}
-
 .divider:after,
 .divider:before {
 content: "";

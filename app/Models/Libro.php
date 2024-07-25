@@ -17,7 +17,8 @@ class Libro extends Model
         'editorial', 
         'categoria', 
         'resumen', 
-        'portada'
+        'portada',
+        'pdf' // Agregar 'pdf' a los campos rellenables
     ];
 
     public function comentarios()
