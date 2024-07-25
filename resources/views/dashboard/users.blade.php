@@ -27,9 +27,9 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>Usuario</td>
-                    <td><a href="{{ route('users.edit', $user) }}" class="btn btn-primary">⚙️</a></td>
+                    <!-- <td><a href="{{ route('users.edit', $user) }}" class="btn btn-primary">⚙️</a></td> -->
                     <td>
-                        <form action="{{ route('users.destroy', $user) }}" method="POST" style="display:inline;">
+                        <!-- <form action="{{ route('users.destroy', $user) }}" method="POST" style="display:inline;"> -->
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">✖️</button>
@@ -40,7 +40,7 @@
 
             </tbody>
         </table>
-        <a href="{{ route('users.create') }}" class="btn btn-success">Añadir Nuevo Usuario</a>
+        <!-- <a href="{{ route('users.create') }}" class="btn btn-success">Añadir Nuevo Usuario</a> -->
     </main>
 </div>
 @endsection

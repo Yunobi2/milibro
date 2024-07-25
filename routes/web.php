@@ -32,8 +32,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/libros', [LibroController::class, 'index'])->name('libros.index');
 Route::get('/libros/categoria/{categoria}', [LibroController::class, 'filtrarPorCategoria'])->name('libros.categoria');
 
-Route::resource('users', 'App\Http\Controllers\UserController')->names('users');
-
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
      Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
      Route::get('/users', [DashboardController::class, 'users'])->name('dashboard.users');

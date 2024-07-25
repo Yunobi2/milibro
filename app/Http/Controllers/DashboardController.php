@@ -17,7 +17,8 @@ class DashboardController extends Controller
 
     public function users()
     {
-        return view('dashboard.users');
+        $users = User::get();
+        return view('dashboard.users', compact('users'));
     }
 
     public function books()

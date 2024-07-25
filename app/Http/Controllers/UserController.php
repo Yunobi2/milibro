@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all(); // Asegúrate de que esta línea esté presente
+        $users = User::get(); // Asegúrate de que esta línea esté presente
         return view('dashboard.users', compact('users'));
     }
 
