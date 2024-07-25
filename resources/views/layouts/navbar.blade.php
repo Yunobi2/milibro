@@ -32,6 +32,12 @@
             <a class="me-2" href="{{url('/favoritos')}}">
                 <img title="Favoritos" src="{{asset('icons/heart.svg')}}" alt="icono favoritos">
             </a>
+          
+            @if (Auth::check() && Auth::user()->rol === 'administrador')
+              <a class="me-2" href="{{ route('dashboard') }}">
+                <img title="Admin" src="{{ asset('icons/admin.svg') }}" alt="icono administrador">
+              </a>
+            @endif
 
             <a class="logout"
                 class="dropdown-item" href="{{ route('logout') }}"
@@ -42,22 +48,6 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
               @csrf 
             </form>
-            <!--        
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-fill custom-icon"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                  <li>
-                    {{-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      {{ __('Cerrar sesión') }} --}}
-                    </a>
-                  </li>
-                </ul>
-                {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  {{-- @csrf 
-                </form> --}}
-              </div> -->
         @else
         <a class="loginprueba"
         href="{{ route('login') }}"
