@@ -38,6 +38,7 @@ class DashboardController extends Controller
             'rol' => 'required|in:usuario,administrador', // Validación para el rol
             'password' => 'required|min:6',
         ]);
+        
 
         User::create([
             'name' => $request->name,
