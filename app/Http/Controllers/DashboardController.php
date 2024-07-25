@@ -60,9 +60,10 @@ class DashboardController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
+            'rol' => 'required|in:usuario,administrador', // Validación para el rol
         ]);
 
-        $user->update($request->only('name', 'email'));
+        $user->update($request->only('name', 'email', 'rol')); // Incluir 'rol' en la actualización
 
         return redirect()->route('users.index')->with('success', 'Usuario actualizado exitosamente.');
     }
