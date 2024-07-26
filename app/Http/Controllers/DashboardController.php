@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\User; 
 use App\Models\Libro; 
+use App\Models\Reporte;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
     {
+        // $totalUsers = User::count();
+        // $totalBooks = Libro::count();
+        // return view('dashboard.index', compact('totalUsers', 'totalBooks'));
         $totalUsers = User::count();
         $totalBooks = Libro::count();
-        return view('dashboard.index', compact('totalUsers', 'totalBooks'));
+        $totalAuthors = Libro::distinct('autor')->count('autor');
+        $totalCategories = Libro::distinct('categoria')->count('categoria');
+        $totalReports = Reporte::count(); 
+
+        return view('dashboard.index', compact('totalUsers', 'totalBooks', 'totalAuthors', 'totalCategories', 'totalReports'));
     }
 ################################################################################################
     public function users()

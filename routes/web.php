@@ -4,6 +4,7 @@ use App\Http\Controllers\LibroController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\CalificacionController;
 use App\Http\Controllers\FavoritoController;
+use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Middleware\CheckAdmin;
 
@@ -45,4 +46,4 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
      //Route::get('/layouts/inicio', [DashboardController::class, 'inicio'])->name('dashboard.inicio');
      //Route::get('/dashboard/gestion/usuarios', [DashboardController::class, 'gestionUsuarios'])->name('dashboard.gestion.usuarios');
  });
- 
+ Route::resource('reportes', ReporteController::class);

@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/stylesadmi.css') }}">
-<div class="d-flex flex-column">
+<div class="d-flex flex-column flex-grow-1">
     <main class="p-4 flex-grow-1">
         <h2 class="mb-4">SISTEMA BIBLIOTECARIO-GESTIÓN DE LIBROS</h2>
         
