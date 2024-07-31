@@ -5,6 +5,16 @@
 @section('content')
 <section class="p-5 mx-20">
   <h2 class="text-2xl">Libro</h2>
+
+    <!-- Botones de accesibilidad -->
+  <div class="accesibilidad flex gap-2 my-4">
+    <span class="mr-2">Tamaño de texto:</span>
+    <button title="Pequeño" class="tamanio-texto px-2 py-1 border rounded" data-size="small">A</button>
+    <button title="Mediano" class="tamanio-texto px-2 py-1 border rounded" data-size="medium">A</button>
+    <button title="Grande" class="tamanio-texto px-3 py-1 border rounded" data-size="large">A</button>
+    <button title="ExtraGrande" class="tamanio-texto px-4 py-1 border rounded" data-size="extra-large">A</button>
+  </div>
+
   <hr>
   <section class="flex m-4">
     <img src="{{ $libro->portada}}" class="w-1/3">
@@ -214,4 +224,20 @@ function toggleEditForm(commentId) {
         const form = document.getElementById(`edit-form-${commentId}`);
         form.classList.toggle('hidden');
     }
+
+    // accecibilidad
+    document.addEventListener('DOMContentLoaded', function() {
+    // ... (tu código existente) ...
+
+    // Código para los ampliadores de texto
+        const buttons = document.querySelectorAll('.tamanio-texto');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const size = this.getAttribute('data-size');
+                document.body.className = document.body.className.replace(/texto-\S+/g, '');
+                document.body.classList.add('texto-' + size);
+            });
+        });
+    });
 </script>
+
