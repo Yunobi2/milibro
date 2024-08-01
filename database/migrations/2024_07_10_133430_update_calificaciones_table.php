@@ -8,11 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        DB::statement('ALTER TABLE calificaciones ADD CONSTRAINT check_calificacion CHECK (calificacion BETWEEN 1 AND 5)');
+        DB::statement('ALTER TABLE calificaciones ADD CONSTRAINT check_calificacion_nueva CHECK (calificacion BETWEEN 1 AND 5)');
     }
     
     public function down()
     {
-        DB::statement('ALTER TABLE calificaciones DROP CONSTRAINT check_calificacion');
+        DB::statement('ALTER TABLE calificaciones DROP CONSTRAINT check_calificacion_nueva');
     }
 };

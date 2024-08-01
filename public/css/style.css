@@ -177,24 +177,6 @@ nav a {
 
 }
 
-.heart-icon{
-    font-size: 2em;
-    margin-right: 10px;
-}
-
-.house-icon{
-    font-size: 2em;
-
-}
-
-.historial{
-    font-size: 2em;
-}
-
-.home{
-    font-size: 2em;
-}
-
 .divider:after,
 .divider:before {
 content: "";
@@ -269,3 +251,30 @@ height: 100%;
     left: -30px; /* Ajusta para mover el icono dentro del input */
     z-index: 1; /* Asegura que el icono esté sobre el input */
 }
+
+/* accesiilidad */
+.texto-small { font-size: 14px; }
+.texto-medium { font-size: 16px; }
+.texto-large { font-size: 18px; }
+.texto-extra-large { font-size: 20px; }
+
+/* Ajustes para elementos específicos */
+.texto-small h1, .texto-small h2 { font-size: 1.5em; }
+.texto-small p { font-size: 1em; }
+.texto-medium h1, .texto-medium h2 { font-size: 1.75em; }
+.texto-medium p { font-size: 1.1em; }
+.texto-large h1, .texto-large h2 { font-size: 2em; }
+.texto-large p { font-size: 1.2em; }
+.texto-extra-large h1, .texto-extra-large h2 { font-size: 2.25em; }
+.texto-extra-large p { font-size: 1.3em; }
+
+/* modo oscuro */
+
+/* Modo claro (por defecto) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #ffba61;
+    --secondary-color: #f0f0f0;
+  }
+  
