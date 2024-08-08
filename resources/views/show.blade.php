@@ -39,7 +39,7 @@
         <p>{{ $libro->ano }} - {{ $libro->paginas }}</p>
         <p>{{ $libro->categoria }}</p>
         <p>{{ $libro->resumen }}</p>
-        <button class="border bg-yellow-400 py-1 px-3 rounded-md">Descargar</button>
+        <a href="/storage/{{ $libro->pdf }}" target="_blank" class="border bg-yellow-400 py-1 px-3 rounded-md no-underline text-black">Leer</a>
       </div>
     </div>
   </section>

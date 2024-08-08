@@ -57,19 +57,15 @@ class DashboardController extends Controller
         return redirect()->route('users.index')->with('success', 'Usuario creado exitosamente.');
     }
 
-    public function edit(User $user)
-    {
-        return view('dashboard.edit', compact('user'));
-    }
-
     public function update(Request $request, User $user)
     {
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
+            'rol' => 'required|in:usuario,administrador', // Validación para el rol
         ]);
 
-        $user->update($request->only('name', 'email'));
+        $user->update($request->only('name', 'email', 'rol'));
 
         return redirect()->route('users.index')->with('success', 'Usuario actualizado exitosamente.');
     }
@@ -82,21 +78,23 @@ class DashboardController extends Controller
 ##############################################################################################################
     public function books()
     {
-        return view('dashboard.books');
+        return view('dashboard.books', [
+            'books' => Libro::get(),
+        ]);
     }
 
-    public function reports()
-    {
-        return view('dashboard.reports');
-    }
+//     public function reports()
+//     {
+//         return view('dashboard.reports');
+//     }
 
-    public function inicio()
-    {
-        return view('layouts.inicio');
-    }
+//     public function inicio()
+//     {
+//         return view('layouts.inicio');
+//     }
 
-    public function gestionUsuarios()
-    {
-        return view('dashboard.gestion_usuarios');
-    }
+//     public function gestionUsuarios()
+//     {
+//         return view('dashboard.gestion_usuarios');
+//     }
 }

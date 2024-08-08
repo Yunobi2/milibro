@@ -12,7 +12,7 @@
                         <span class="text-decoration-none text-dark">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="{{asset('icons/usuario.svg')}}" alt="usuarios icon" class="mb-2">
+                                    <img class="mx-auto" src="{{asset('icons/usuario.svg')}}" alt="usuarios icon" class="mb-2">
                                     <p class="mb-0">USUARIOS</p>
                                     <p>{{ $totalUsers }}</p>
     
@@ -24,7 +24,7 @@
                         <span class="text-decoration-none text-dark">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="{{asset('icons/autor.svg')}}" alt="autores icon" class="mb-2">
+                                    <img class="mx-auto" src="{{asset('icons/autor.svg')}}" alt="autores icon" class="mb-2">
                                     <p class="mb-0">AUTORES</p>
                                     <p>{{ $totalAuthors }}</p>
                                 </div>
@@ -35,7 +35,7 @@
                         <span class="text-decoration-none text-dark">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="{{asset('icons/libros.svg')}}" alt="libros icon" class="mb-2">
+                                    <img class="mx-auto" src="{{asset('icons/libros.svg')}}" alt="libros icon" class="mb-2">
                                     <p class="mb-0">LIBROS</p>
                                     <p>{{ $totalBooks }}</p>
                                 </div>
@@ -53,7 +53,7 @@
                         <span class="text-decoration-none text-dark">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="{{asset('icons/categoria.svg')}}" alt="categoría icon" class="mb-2">
+                                    <img class="mx-auto" src="{{asset('icons/categoria.svg')}}" alt="categoría icon" class="mb-2">
                                     <p class="mb-0">CATEGORÍA</p>
                                     <p>{{ $totalCategories }}</p>
     
@@ -65,7 +65,7 @@
                         <span class="text-decoration-none text-dark">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="{{asset('icons/reporte.svg')}}" alt="reportes icon" class="mb-2">
+                                    <img class="mx-auto" src="{{asset('icons/reporte.svg')}}" alt="reportes icon" class="mb-2">
                                     <p class="mb-0">REPORTES</p>
                                     <p>{{ $totalReports }}</p>
                                 </div>
