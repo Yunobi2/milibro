@@ -7,6 +7,7 @@ use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Controllers\DescargaController;
 
 
 Route::get('/', 'App\Http\Controllers\LibroController@index');
@@ -26,11 +27,16 @@ Route::delete('/comentarios/{comentario}', [ComentarioController::class, 'destro
 Route::post('/libros/{libro}/calificar', [CalificacionController::class, 'store'])->name('calificaciones.store');
 Route::put('/libros/{libro}', [LibroController::class, 'update'])->name('libros.update');
 
+Route::get('/reportes', [ReporteController::class, 'index'])->name('reportes.index');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('favoritos', [FavoritoController::class, 'index'])->name('favoritos.index');
     Route::post('favoritos/{libro}', [FavoritoController::class, 'toggle'])->name('favoritos.toggle');
     Route::get('favoritos/categoria/{categoria}', [FavoritoController::class, 'filtrarPorCategoria'])->name('favoritos.categoria');
 });
+
+Route::get('descargar/libro/{id}', [DescargaController::class, 'descargarLibro'])->name('descargar.libro');
 
 Route::get('/libros', [LibroController::class, 'index'])->name('libros.index');
 Route::get('/libros/categoria/{categoria}', [LibroController::class, 'filtrarPorCategoria'])->name('libros.categoria');

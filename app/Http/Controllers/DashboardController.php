@@ -83,12 +83,11 @@ class DashboardController extends Controller
         ]);
     }
 
-//     public function reports()
-//     {
-//         return view('dashboard.reports');
-//     }
-
-//     public function inicio()
+    public function reports()
+    {
+        return view('dashboard.reports');
+    }
+//    public function inicio()
 //     {
 //         return view('layouts.inicio');
 //     }

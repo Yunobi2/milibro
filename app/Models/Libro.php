@@ -51,4 +51,8 @@ class Libro extends Model
     {
         return $this->favoritos()->where('user_id', $userId)->exists();
     }
+    public function descargas()
+    {
+        return $this->hasMany(Descarga::class);
+    }
 }
