@@ -292,6 +292,19 @@
         }
     });
 
+    // Gráfico: Usuarios Más Activos en Descargas
+    var ctx = document.getElementById('usuariosMasActivosDescargasChart').getContext('2d');
+    var usuariosMasActivosDescargasChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {!! json_encode($usuariosMasActivosDescargas->pluck('name')) !!},
+            datasets: [{
+                label: 'Total Descargas',
+                data: {!! json_encode($usuariosMasActivosDescargas->pluck('total_descargas')) !!},
+            }]
+        }
+    });
+
     // Gráfico: Usuarios Más Activos en Comentarios
     var ctx = document.getElementById('usuariosMasComentadoresChart').getContext('2d');
     var usuariosMasComentadoresChart = new Chart(ctx, {
