@@ -27,22 +27,15 @@ class DescargaController extends Controller
     public function descargarLibro($id)
     {
         $libro = Libro::findOrFail($id);
+        $descarga = new Descarga();
+        $descarga->libro_id = $libro->id;
+        $descarga->user_id = auth()->user()->id;
+        $descarga->save();
 
-        // Registrar la descarga
-        Descarga::create([
-            'libro_id' => $libro->id,
-            'user_id' => auth()->id(),
-        ]);
-
-        // Suponiendo que los libros están almacenados en el storage de Laravel
-        $filePath = 'libros/' . $libro->archivo;
-
-        if (Storage::exists($filePath)) {
-            return Storage::download($filePath);
-        } else {
-            return back()->with('error', 'El archivo no se encuentra disponible.');
-        }
+        return Storage::disk('public')->download($libro->pdf);
     }
+
+
 
     /**
      * Elimina una descarga (si se requiere).

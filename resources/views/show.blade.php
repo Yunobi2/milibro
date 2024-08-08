@@ -42,7 +42,7 @@
         <!-- agregar boton de descarga -->
         <!-- agregar a la base de datos la cantidad de descargas -->
         <a href="{{ route('descargar.libro', $libro->id) }}" class="border bg-yellow-400 py-1 px-3 rounded-md no-underline text-black">Descargar</a>
-      </div>
+    </div>
     </div>
   </section>
   <h2 class="text-2xl text-center my-2">Opiniones sobre {{ $libro->titulo }}</h2>
