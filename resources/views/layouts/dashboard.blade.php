@@ -12,15 +12,16 @@
 </head>
 <body>
     @include('layouts.app')
-    <div class="d-flex">
+    <div class="d-flex flex">
         <aside style="width: 250px; background-color: #fef7eb; border-right: 2px solid rgba(0, 0, 0, 0.1); box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);">
             <div class="text-center mb-4">
                 <img src=/libros.png alt="logo" class="img-fluid">
             </div>
-            <ul class="nav flex-column">
+            <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link text-black {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
-                        <img title="Inicio" src="{{asset('icons/inicio.svg')}}" alt="icono de inicio"> INICIO
+                        <img title="Inicio" src="{{asset('icons/inicio.svg')}}" alt="icono de inicio"> 
+                        INICIO
                     </a>
                 </li>
                 <li class="nav-item">
@@ -34,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black {{ request()->routeIs('dashboard.reports') ? 'active' : '' }}" href="{{ route('dashboard.reports') }}">
+                    <a class="nav-link text-black {{ request()->routeIs('dashboard.reports') ? 'active' : '' }}" href="{{ route('reportes.index') }}">
                         <img title="Reportes" src="{{asset('icons/reporte.svg')}}" alt="icono de reportes"> REPORTES
                     </a>
                 </li>

@@ -39,7 +39,9 @@
         <p>{{ $libro->ano }} - {{ $libro->paginas }}</p>
         <p>{{ $libro->categoria }}</p>
         <p>{{ $libro->resumen }}</p>
-        <a href="/storage/{{ $libro->pdf }}" target="_blank" class="border bg-yellow-400 py-1 px-3 rounded-md no-underline text-black">Leer</a>
+        <!-- agregar boton de descarga -->
+        <!-- agregar a la base de datos la cantidad de descargas -->
+        <a href="{{ route('descargar.libro', $libro->id) }}" class="border bg-yellow-400 py-1 px-3 rounded-md no-underline text-black">Descargar</a>
       </div>
     </div>
   </section>

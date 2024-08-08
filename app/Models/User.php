@@ -55,4 +55,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Favorito::class);
     }
+    public function descargas()
+    {
+        return $this->hasMany(Descarga::class);
+    }
 }
