@@ -32,7 +32,18 @@
           alt="Favorito" 
           title="Favorito"
           data-libro-id="{{ $libro->id }}">        
-          <img class="px-1 w-8 rounded h-12 hover:bg-yellow-300 cursor-pointer" src="{{asset('icons/compartir.svg')}}" alt="">
+          <img id = "compartir-icon" title="Compartir" class="px-1 w-8 rounded h-12 hover:bg-yellow-300 cursor-pointer" src="{{asset('icons/compartir.svg')}}" alt="">
+          <div id="compartir-menu" class="hidden absolute bg-white border rounded-md shadow-lg p-2">
+            <a href="#" title="Facebook" class="block p-2 hover:bg-gray-100" onclick="compartirEnFacebook()">
+              <img src="{{asset('icons/facebook.svg')}}" alt="Facebook" class="w-6 h-6 inline-block mr-2">
+            </a>
+            <a href="#" title="WhatsApp" class="block p-2 hover:bg-gray-100" onclick="compartirEnWhatsApp()">
+              <img src="{{asset('icons/whatsapp.svg')}}" alt="WhatsApp" class="w-6 h-6 inline-block mr-2">
+            </a>
+            <a href="#" title="Instagram" class="block p-2 hover:bg-gray-100" onclick="compartirEnInstagram()">
+              <img src="{{asset('icons/instagram.svg')}}" alt="Instagram" class="w-6 h-6 inline-block mr-2">
+            </a>
+          </div>
         </div>
       </div>
       <div>
@@ -241,5 +252,42 @@ function toggleEditForm(commentId) {
             });
         });
     });
+
+    //compartir
+    document.addEventListener('DOMContentLoaded', function() {
+    const compartirIcon = document.getElementById('compartir-icon');
+    const compartirMenu = document.getElementById('compartir-menu');
+
+    compartirIcon.addEventListener('click', function(e) {
+        e.stopPropagation();
+        compartirMenu.classList.toggle('hidden');
+        
+        // Posicionar el menú junto al icono
+        const rect = compartirIcon.getBoundingClientRect();
+        compartirMenu.style.top = `${rect.bottom}px`;
+        compartirMenu.style.left = `${rect.left}px`;
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+        document.addEventListener('click', function() {
+            compartirMenu.classList.add('hidden');
+        });
+        
+    });
+
+    function compartirEnFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    const titulo = encodeURIComponent('{{ $libro->titulo }}');
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${titulo}`, '_blank');
+    }
+
+    function compartirEnWhatsApp() {
+    const texto = encodeURIComponent('Mira este libro: {{ $libro->titulo }} - ' + window.location.href);
+    window.open(`https://wa.me/?text=${texto}`, '_blank');
+    }
+
+    function compartirEnInstagram() {
+    window.open('https://www.instagram.com/', '_blank');
+    }
 </script>
 
