@@ -18,23 +18,23 @@
                 <img src=/libros.png alt="logo" class="img-fluid">
             </div>
             <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link text-black {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                <li class="nav-item w-full">
+                    <a class="nav-link text-black w-full {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
                         <img title="Inicio" src="{{asset('icons/inicio.svg')}}" alt="icono de inicio"> 
                         INICIO
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item w-full">
                     <a class="nav-link text-black {{ request()->routeIs('users.index') ? 'active' : '' }}" href="{{ route('users.index') }}">
                         <img title="Gestión de Usuarios" src="{{asset('icons/usuario_edit.svg')}}" alt="icono gestion de usuario"> GESTIÓN DE USUARIOS
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item w-full">
                     <a class="nav-link text-black {{ request()->routeIs('dashboard.books') ? 'active' : '' }}" href="{{ route('dashboard.books') }}">
                         <img title="Gestión de Libros" src="{{asset('icons/libros.svg')}}" alt="icono gestion de libros"> GESTIÓN DE LIBROS
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item w-full">
                     <a class="nav-link text-black {{ request()->routeIs('dashboard.reports') ? 'active' : '' }}" href="{{ route('reportes.index') }}">
                         <img title="Reportes" src="{{asset('icons/reporte.svg')}}" alt="icono de reportes"> REPORTES
                     </a>

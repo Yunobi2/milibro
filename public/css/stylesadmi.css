@@ -41,9 +41,7 @@ main {
     transition: transform 0.2s;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
+
 
 .card img {
     width: 200px;
