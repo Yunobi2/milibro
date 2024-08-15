@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('descargar/libro/{id}', [DescargaController::class, 'descargarLibro'])->name('descargar.libro');
+Route::get('/historial', [DescargaController::class, 'historialDescargas'])->name('historial');
 
 Route::get('/libros', [LibroController::class, 'index'])->name('libros.index');
 Route::get('/libros/categoria/{categoria}', [LibroController::class, 'filtrarPorCategoria'])->name('libros.categoria');
