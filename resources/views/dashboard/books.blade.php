@@ -10,7 +10,7 @@
         <div class="mb-3">
             <button class="btn btn-primary">Lista de Libros</button>
             <button class="btn btn-secondary" data-toggle="modal" data-target="#createBookModal">Agregar libro</button>
-            <button class="btn btn-secondary">Agregar categoría</button>
+            <button class="btn btn-secondary" data-toggle="modal" data-target="#createCategoryModal">Agregar categoría</button>
         </div>
 
         <!-- Barra de búsqueda -->
@@ -200,6 +200,33 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para crear nueva categoría -->
+<div class="modal fade" id="createCategoryModal" tabindex="-1" role="dialog" aria-labelledby="createCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createCategoryModalLabel">Crear Nueva Categoría</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="createCategoryForm" action="{{ route('categorias.store') }}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="createModalCategoriaNombre">Nombre de la Categoría</label>
+                        <input type="text" class="form-control" id="createModalCategoriaNombre" name="nombre" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Crear Categoría</button>
                 </div>
             </form>
         </div>

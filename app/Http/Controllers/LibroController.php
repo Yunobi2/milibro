@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Libro;
+use App\Models\Categoria; // Asegúrate de importar el modelo Categoria
 
 class LibroController extends Controller
 {
@@ -51,6 +52,19 @@ class LibroController extends Controller
 
         return redirect()->route('dashboard.books')->with('success', 'Libro creado exitosamente.');
 
+    }
+
+    public function storeCategoria(Request $request) {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+
+        // Crear nueva categoría
+        $categoria = new Categoria();
+        $categoria->nombre = $request->nombre;
+        $categoria->save();
+
+        return redirect()->route('dashboard.books')->with('success', 'Categoría creada exitosamente.');
     }
 
     public function filtrarPorCategoria($categoria)

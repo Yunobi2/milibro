@@ -42,6 +42,7 @@ Route::get('/historial', [DescargaController::class, 'historialDescargas'])->nam
 Route::get('/libros', [LibroController::class, 'index'])->name('libros.index');
 Route::get('/libros/categoria/{categoria}', [LibroController::class, 'filtrarPorCategoria'])->name('libros.categoria');
 Route::delete('/libros/{libro}', [LibroController::class, 'destroy'])->name('libros.destroy');
+Route::post('/categorias', [LibroController::class, 'storeCategoria'])->name('categorias.store');
 
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
      Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

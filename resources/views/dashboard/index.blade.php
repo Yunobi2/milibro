@@ -67,7 +67,7 @@
                                 <div class="card-body">
                                     <img class="mx-auto" src="{{asset('icons/reporte.svg')}}" alt="reportes icon" class="mb-2">
                                     <p class="mb-0">REPORTES</p>
-                                    <p>{{ $totalReports }}</p>
+                                    <p>10</p>
                                 </div>
                             </div>
                         </span>

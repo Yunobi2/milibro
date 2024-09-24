@@ -2,6 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/stylesadmi.css') }}">
 <div class="p-4 space-y-8">
     <h1 class="text-2xl font-bold">Reportes de Favoritos</h1>
 
